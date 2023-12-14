@@ -1,5 +1,6 @@
 \documentclass[conference]{IEEEtran}
 
+\usepackage{listings}
 \usepackage{hyperref}
 \usepackage{url}
 \usepackage{cite}
@@ -43,11 +44,16 @@ https://medium.com/@uidev3594/css-methodologies-d31903bafab3
 
 \section{Introduction}
 CSS (Cascading Style Sheets) is a language for describing the style and layout of web pages. This includes defining typography, colors, sizes, spacings, animations and among others responsiveness. 
-As web projects grow in complexity, maintaining a scalable, maintainable, and organized CSS codebase becomes crucial. 
-A clear CSS Code architecture is 
 In larger projects, managing and maintaining CSS code can become a significant challenge. Common issues include a lot of redundant code, the absence of clear naming conventions and structure, and the evolution of the CSS codebase into an unmaintainable state.
-As a result, the adoption of a robust CSS methodology becomes not only prudent but essential. Such a methodology provides the much-needed scaffolding to organize and maintain CSS stylesheets effectively, particularly in the context of larger projects.
-First of all, the structure of each methodology will be explained.
+As a result, the adoption of a robust CSS methodology becomes not only prudent but essential. Such a methodology provides the much-needed scaffolding to organize and maintain CSS stylesheets effectively, particularly in the context of larger projects. \cite{medium1}
+Many CSS methodologies are existing, where three of the most used ones will be evaluated further:
+\begin{itemize}
+\item BEM (Block Element Modifier): BEM introduces a naming convention that divides styles into Blocks, Elements, and Modifiers, promoting a clear and modular structure.
+\item SMACSS (Scalable and Modular Architecture for CSS): SMACSS emphasizes categorizing styles into base, layout, module, state, and theme categories, providing a flexible and scalable architecture.
+\item Atomic CSS: Atomic CSS breaks down styles into small, single-purpose utility classes, allowing for quick and flexible styling without writing custom styles for each element.
+\end{itemize}
+
+For each methodology, first of all the structure will be explained. 
 Next, each methodology will be analyzed based on the following key metrics:
 \begin{itemize}
 \item Lines of Code (LOC)
@@ -58,8 +64,46 @@ Next, each methodology will be analyzed based on the following key metrics:
 In order to provide a valid comparison, a practical implementation in each methodology will be implemented. 
 In the end, it will be evaluated if there is an overall superior methodology based on the given metrics or if certain methodologies excel in specific project requirements. 
 
+//TODO iwo schreiben, dass man auf alle spezifischen html tags verhindert hat, um alle stylings so viel wie möglich selber machen muss also hauptsächlich divs verwendet wurden
+
 \section{BEM}
-BEM stands for Block, Element and Modifier. \cite{bem}
+BEM stands for Block, Element and Modifier and counts as a CSS methodology because it is designed to improve the modularity, reusability and structure of code by providing a clear and consistent naming structure
+BEM was introduced by Yandex, a Russian company and has gained widespread adoption in the web development community. \cite{bem}
+
+\subsection{Structure}
+The methodology consists of Blocks, Elements and Modifiers. 
+
+\textbf{Block}
+\begin{itemize}
+\item Standalone entity that is meaningful on its own. 
+\item Examples: "header", "container", "menu", "checkbox"
+\end{itemize}
+
+\textbf{Element}
+\begin{itemize}
+\item A part of a block that has no standalone meaning and is semantically tied to its block. 
+\item Examples: "list item", "checkbox caption", "header title"
+\end{itemize} \par
+
+\textbf{Modifier}
+\begin{itemize}
+\item A flag on a block or element. Use them to change appearance or behavior.
+\item Examples: "disabled", "checked", "small", "fixed"
+\end{itemize}
+
+\begin{lstlisting}[basicstyle=\small\ttfamily]
+<div class="todo-list todo-list--light work">
+  <div class="todo-list__title">Work</div>
+  <div class="todo-list-item">
+    <div
+      onclick="toggleItem(this)"
+      class="todo-list-item__label 
+      todo-list-item__label--light"
+      id="0">bake cake
+    </div>
+  </div>
+</div>
+\end{lstlisting}
 
 lessons learned bem:
 unklar, wann man jetzt einen block erstellt und abwann ein tag ein unterelement ist
@@ -268,6 +312,16 @@ citation first, followed by the original foreign-language citation \cite{b6}.
 
 \begin{thebibliography}{99}
 \bibitem{bem} Yandex (2018). \textit{BEM}. Available at: \url{https://getbem.com/} (Accessed: December 14, 2024).
+\bibitem{medium1}
+Pavan (2018). \textit{CSS Methodologies}. Available at: \url{https://medium.com/@uidev3594/css-methodologies-d31903bafab3} (Accessed: December 14, 2024).
+\bibitem{medium2}
+N. Mirzaaghaei (2018). \textit{What Are CSS Methodologies and Why to Use Them}. Available at: \url{https://medium.com/@nargessmi87/what-are-css-methodologies-and-why-to-use-them-4ad32a86aa80} (Accessed: December 14, 2024).
+\bibitem{bybydev}
+Byby.dev (2021). \textit{CSS Methodologies}. Available at: \url{https://byby.dev/css-methodologies} (Accessed: December 14, 2024).
+\bibitem{webfx}
+W. Craig. \textit{CSS Methodologies}. Available at: \url{https://www.webfx.com/blog/web-design/css-methodologies/} (Accessed: December 14, 2024).
+
+
 \bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
 \bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
 \bibitem{b3} I. S. Jacobs and C. P. Bean, ``Fine particles, thin films and exchange anisotropy,'' in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271--350.

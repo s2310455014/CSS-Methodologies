@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="smacss/main.css" />
+    <title>My TODOs</title>
+  </head>
+  <body class="theme-light">
+    <div class="header">
+      <div class="title">My TODOs</div>
+      <div class="theming-toggle" onclick="toggleDarkMode()">
+        <div class="toggle-ball"></div>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="todo-input">
+        <input
+          type="text"
+          class="text"
+          id="todo-input"
+          placeholder="Add a new task"
+        />
+        <select class="category" name="category" id="selected-category">
+          <option value="work">Work</option>
+          <option value="school">School</option>
+          <option value="personal">Personal</option>
+        </select>
+        <div class="button" onclick="addTask()">Add</div>
+      </div>
+      <div class="todo-lists">
+        <div class="todo-list work">
+          <div class="todo-list-title">Work</div>
+          <div class="item">
+            <div onclick="toggleItem(this)" class="button label" id="0">
+              bake cake
+            </div>
+          </div>
+        </div>
+        <div class="todo-list school">
+          <div class="todo-list-title">School</div>
+          <div class="item">
+            <div onclick="toggleItem(this)" class="button label" id="1">
+              implement prototypical architectural pattern
+            </div>
+          </div>
+          <div class="item">
+            <div onclick="toggleItem(this)" class="button label checked" id="2">
+              drink punsch afterwards
+            </div>
+          </div>
+        </div>
+        <div class="todo-list personal">
+          <div class="todo-list-title">Personal</div>
+          <div class="item">
+            <div onclick="toggleItem(this)" class="button label checked" id="3">
+              go to öh punschstandl
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="code-smacss.js"></script>
+  </body>
+</html>

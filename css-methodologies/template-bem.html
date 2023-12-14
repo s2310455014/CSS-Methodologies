@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="bem/style-bem.css" />
+    <title>My TODOs</title>
+  </head>
+  <body class="theme theme--light">
+    <div class="header">
+      <div class="header__title">My TODOs</div>
+      <div
+        class="theming-toggle theming-toggle--light"
+        onclick="toggleDarkMode()"
+      >
+        <div id="toggle-ball" class="toggle-ball"></div>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="todo-input todo-input--light">
+        <input
+          type="text"
+          class="todo-input__text"
+          id="todo-input"
+          placeholder="Add a new task"
+        />
+        <select
+          class="todo-input__category"
+          name="category"
+          id="selected-category"
+        >
+          <option value="work">Work</option>
+          <option value="school">School</option>
+          <option value="personal">Personal</option>
+        </select>
+        <div
+          class="todo-input__add-button todo-input__add-button--light"
+          onclick="addTask()"
+        >
+          Add
+        </div>
+      </div>
+      <div class="todo-lists">
+        <div class="todo-list todo-list--light work">
+          <div class="todo-list__title">Work</div>
+          <div class="todo-list-item">
+            <div
+              onclick="toggleItem(this)"
+              class="todo-list-item__label todo-list-item__label--light"
+              id="0"
+            >
+              bake cake
+            </div>
+          </div>
+        </div>
+        <div class="todo-list todo-list--light school">
+          <div class="todo-list__title">School</div>
+          <div class="todo-list-item">
+            <div
+              onclick="toggleItem(this)"
+              class="todo-list-item__label todo-list-item__label--light"
+              id="1"
+            >
+              implement prototypical architectural pattern
+            </div>
+          </div>
+          <div class="todo-list-item">
+            <div
+              onclick="toggleItem(this)"
+              class="todo-list-item__label todo-list-item__label--checked todo-list-item__label--light"
+              id="2"
+            >
+              drink punsch afterwards
+            </div>
+          </div>
+        </div>
+        <div class="todo-list todo-list--light personal">
+          <div class="todo-list__title">Personal</div>
+          <div class="todo-list-item">
+            <div
+              onclick="toggleItem(this)"
+              class="todo-list-item__label todo-list-item__label--checked todo-list-item__label--light"
+              id="3"
+            >
+              go to öh punschstandl
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="code-bem.js"></script>
+  </body>
+</html>

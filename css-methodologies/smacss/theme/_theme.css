@@ -1,0 +1,44 @@
+/*DEFAULT LIGHT*/
+
+.theme-light {
+  background-color: #f4f4f4;
+}
+
+.theme-light .todo-input {
+  background-color: #ffffff;
+}
+
+.theme-light .todo-list {
+  background-color: #ffffff;
+}
+
+.theme-light .button {
+  background-color: #e6e6e6;
+}
+
+.theme-light .theming-toggle {
+  background-color: #e6e6e6;
+}
+
+/*DARK*/
+
+.theme-dark {
+  background-color: #333;
+  color: #fff;
+}
+
+.theme-dark .todo-input {
+  background-color: #464646;
+}
+
+.theme-dark .todo-list {
+  background-color: #464646;
+}
+
+.theme-dark .button {
+  background-color: #333;
+}
+
+.theme-dark .theming-toggle {
+  background-color: #464646;
+}

@@ -1,0 +1,166 @@
+.font-white {
+  color: #fff;
+}
+
+.flex-r {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-c {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-w {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.p5 {
+  padding: 5px;
+}
+
+.p05 {
+  padding: 0.5rem;
+}
+
+.p1 {
+  padding: 1rem;
+}
+
+.m1 {
+  margin: 1rem;
+}
+
+.m2 {
+  margin: 2rem;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.border-none {
+  border: none;
+}
+
+.border-r05 {
+  border-radius: 0.5rem;
+}
+
+.border-r50 {
+  border-radius: 50%;
+}
+
+.fs15 {
+  font-size: 1.5rem;
+}
+
+.fs2 {
+  font-size: 2rem;
+}
+
+.g05 {
+  gap: 0.5rem;
+}
+
+.g1 {
+  gap: 1rem;
+}
+
+.g2 {
+  gap: 2rem;
+}
+
+.width100 {
+  width: 100%;
+}
+
+.width18 {
+  width: 18rem;
+}
+
+.width-fit {
+  width: fit-content;
+}
+
+.max-width-20 {
+  max-width: 20rem;
+}
+
+.cursor-p {
+  cursor: pointer;
+}
+
+.justify-c {
+  justify-content: center;
+}
+
+.align-c {
+  align-items: center;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.white {
+  background-color: #fff;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.bg-l {
+  background-color: #e6e6e6;
+}
+
+.bg-ll {
+  background-color: #f4f4f4;
+}
+
+.bg-d {
+  background-color: #464646;
+}
+
+.bg-dd {
+  background-color: #333;
+}
+
+.top20 {
+  top: 20px;
+}
+
+.right20 {
+  right: 20px;
+}
+
+.width20 {
+  width: 20px;
+}
+
+.width60 {
+  width: 60px;
+}
+
+.height20 {
+  height: 20px;
+}
+
+.height30 {
+  height: 30px;
+}
+
+.border-r15 {
+  border-radius: 15px;
+}
+
+.transform {
+  transition: transform 0.3s ease;
+}
+
+.translateX {
+  transform: translateX(30px);
+}

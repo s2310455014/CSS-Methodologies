@@ -1,0 +1,20 @@
+body {
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  margin: 2rem;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main .todo-input {
+  border-radius: 0.5rem;
+}
+
+.main .todo-list {
+  border-radius: 0.5rem;
+}

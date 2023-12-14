@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="atomic/style-atomic.css" />
+    <title>My TODOs</title>
+  </head>
+  <body class="bg-ll">
+    <div>
+      <div class="p1 fs2">My TODOs</div>
+      <div
+        class="bg-l fixed top20 right20 width60 height30 border-r15 flex-r cursor-p p5 align-c"
+        onclick="toggleDarkMode(this)"
+      >
+        <div class="width20 height20 white border-r50 transform"></div>
+      </div>
+    </div>
+
+    <div class="m2 flex-c align-c g2">
+      <div class="g05 flex-c p1 border-r05 bg-white">
+        <input
+          type="text"
+          class="p05"
+          id="todo-input"
+          placeholder="Add a new task"
+        />
+        <select class="width100 p05" name="category" id="selected-category">
+          <option value="work">Work</option>
+          <option value="school">School</option>
+          <option value="personal">Personal</option>
+        </select>
+        <div
+          class="bg-l p05 border-none border-r05 cursor-p"
+          onclick="addTask()"
+        >
+          Add
+        </div>
+      </div>
+      <div class="flex-r flex-w justify-c">
+        <div class="bg-white p1 m1 border-r05 flex-c g1 width18 work">
+          <div class="fs15">Work</div>
+          <div class="flex-c g1">
+            <div
+              onclick="toggleItem(this)"
+              class="width-fit bg-l p05 border-r05 cursor-p border-none"
+              id="0"
+            >
+              bake cake
+            </div>
+          </div>
+        </div>
+        <div class="bg-white p1 m1 border-r05 flex-c g1 width18 school">
+          <div class="fs15">School</div>
+          <div class="flex-c g1">
+            <div
+              onclick="toggleItem(this)"
+              class="width-fit bg-l p05 border-r05 cursor-p border-none"
+              id="1"
+            >
+              implement prototypical architectural pattern
+            </div>
+          </div>
+          <div class="flex-c g1">
+            <div
+              onclick="toggleItem(this)"
+              class="width-fit bg-l p05 border-r05 cursor-p border-none line-through"
+              id="2"
+            >
+              drink punsch afterwards
+            </div>
+          </div>
+        </div>
+        <div class="bg-white p1 m1 border-r05 flex-c g1 width18 personal">
+          <div class="fs15">Personal</div>
+          <div class="flex-c g1">
+            <div
+              onclick="toggleItem(this)"
+              class="width-fit bg-l p05 border-r05 cursor-p border-none line-through"
+              id="3"
+            >
+              go to öh punschstandl
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="code-atomic.js"></script>
+  </body>
+</html>

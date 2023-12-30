@@ -17,7 +17,10 @@ function addTask() {
 
   const newTodo = document.createElement("div");
   newTodo.textContent = todoText;
-  newTodo.classList.add("todo-list-item__label");
+  newTodo.classList.add(
+    "todo-list-item__label",
+    "todo-list-item__label--light"
+  );
   newTodo.addEventListener("click", function () {
     toggleItem(newTodo);
   });

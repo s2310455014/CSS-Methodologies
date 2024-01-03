@@ -45,16 +45,18 @@ css, css methodologies, cascading style sheets, bem, smacss, atomic css, organiz
 \section{Introduction}
 CSS (Cascading Style Sheets) is a language for describing the style and layout of web pages. This includes defining typography, colors, sizes, spacings, animations and among others responsiveness. 
 In larger projects, managing and maintaining CSS code can become a significant challenge. Common issues include a lot of redundant code, the absence of clear naming conventions and structure, and the evolution of the CSS codebase into an unmaintainable state.
-As a result, the adoption of a robust CSS methodology becomes not only prudent but essential. Such a methodology provides the much-needed scaffolding to organize and maintain CSS stylesheets effectively, particularly in the context of larger projects. \cite{medium1}
-Many CSS methodologies are existing, where three of the most used ones will be evaluated further:
+As a result, the adoption of a robust CSS methodology becomes not only prudent but essential. Such a methodology provides the much-needed scaffolding to organize and maintain CSS stylesheets effectively, particularly in the context of larger projects. \cite{medium1} \\
+
+Several CSS methodologies exist, and this evaluation will delve into three of the most widely utilized ones:
 \begin{itemize}
 \item BEM (Block Element Modifier): BEM introduces a naming convention that divides styles into Blocks, Elements, and Modifiers, promoting a clear and modular structure.
 \item SMACSS (Scalable and Modular Architecture for CSS): SMACSS emphasizes categorizing styles into base, layout, module, state, and theme categories, providing a flexible and scalable architecture.
 \item Atomic CSS: Atomic CSS breaks down styles into small, single-purpose utility classes, allowing for quick and flexible styling without writing custom styles for each element.
 \end{itemize}
 
-For each methodology, first of all the structure will be explained. 
-Next, each methodology will be analyzed based on the following key metrics:
+
+For each methodology, we will begin by elucidating its structure. Furthermore, a code snippet in HTML and CSS for each methodology will be presented, providing a consistent basis for evaluation and facilitating a direct comparison of their implementation and usage.
+Subsequently, an analysis will be conducted using the following key metrics:
 \begin{itemize}
 \item Lines of Code (LOC)
 \item Maintenance
@@ -64,10 +66,10 @@ Next, each methodology will be analyzed based on the following key metrics:
 In order to provide a valid comparison, a practical implementation in each methodology will be implemented. 
 In the end, it will be evaluated if there is an overall superior methodology based on the given metrics or if certain methodologies excel in specific project requirements. 
 
-//TODO iwo schreiben, dass man auf alle spezifischen html tags verhindert hat, um alle stylings so viel wie möglich selber machen muss also hauptsächlich divs verwendet wurden
+
 
 \section{BEM}
-BEM stands for Block, Element and Modifier and counts as a CSS methodology because it is designed to improve the modularity, reusability and structure of code by providing a clear and consistent naming structure
+BEM stands for Block, Element and Modifier and counts as a CSS methodology because it is designed to improve the modularity, reusability and structure of code by providing a clear and consistent naming structure.
 BEM was introduced by Yandex, a Russian company and has gained widespread adoption in the web development community. \cite{bem}
 
 \subsection{Structure}
@@ -160,19 +162,12 @@ The methodology consists of Blocks, Elements and Modifiers.
 
 
 
-lessons learned bem:
-unklar, wann man jetzt einen block erstellt und abwann ein tag ein unterelement ist
-weil meistens hat man vershcachtelte blöcke
-benennung auch schwierig
-
-
-
 
 \section{SMACSS}
 SMACSS stands for Scalable and Modular Architecture for CSS and is a methodology for organizing and structuring CSS code in a way that promotes scalability, modularity, and maintainability in large web projects. It was developed by Jonathan Snook and emphasizes a modular approach to designing and developing stylesheets. \cite{smacss}
 
 \subsection{Structure}
-The SMACSS methodology breaks down the CSS code into five main categories, which will be represented by different stylesheets:
+The SMACSS methodology breaks down the CSS code into five main categories, which are represented by different stylesheets:
 
 \textbf{Base}
 \begin{itemize}
@@ -355,8 +350,9 @@ If we look at padding for example, for each needed variation a different utility
 
 
 \section{Comparison}
-To conduct an objective comparison of the three methodologies, a todo-list application was implemented using each methodology. While the visual appearance remains consistent across all three applications, variations in HTML, CSS, and JavaScript code arise due to the adoption of the different CSS methodologies. Particularly, the emphasis was on utilizing <div> tags in the HTML, and a theme toggle was introduced to extract the maximum functionality of CSS.
-The application in both themes can be seen in \ref{fig1} and \ref{fig2}.
+To conduct an objective comparison of the three methodologies, a todo-list application was implemented using each methodology. While the visual appearance remains consistent across all three applications, variations in HTML, CSS, and JavaScript code arise due to the adoption of the different CSS methodologies. Particularly, the emphasis was on utilizing 
+\emph{div} tags in the HTML, and a theme toggle was introduced to extract the maximum functionality of CSS.
+The application in both themes can be seen in the illustration \ref{fig1} and \ref{fig2}.
 This approach ensures a thorough exploration of the capabilities inherent in each methodology.
 
 With distinct code bases established, the analysis will focus on four key metrics:
@@ -383,9 +379,9 @@ With distinct code bases established, the analysis will focus on four key metric
 \subsection{Lines of Code}
 Comparing the Lines of Code (without blank lines), three different categories will be investigated:
 \begin{itemize}
-    \item The Lines of Code for each methodology altogether, including the CSS files, the HTML file and the JavaScript file. 
-    \item The Lines of Code of the stylesheet for the given example above of writing one todo-list item.
-    \item The Lines of Code of the function for toggling between light and dark theme.
+    \item The LOC for each methodology altogether, including the CSS files, the HTML file and the JavaScript file. 
+    \item The LOC of the stylesheet for the given example above of writing one todo-list item.
+    \item The LOC of the function for toggling between light and dark theme.
 \end{itemize}
 
 \begin{table}[]
@@ -399,14 +395,14 @@ LOC - function for toggling themes  & 40  & 5      & 22         &
 \label{loc}
 \end{table}
 
-As illustrated in table \ref{loc}, SMACSS emerges as the overall winner in the key metric of Lines of Code (LOC), having the smallest LOC in each category. Positioned in the middle field, Atomic CSS outperforms BEM, which holds the last position in this comparison. 
+As illustrated in table \ref{loc}, SMACSS emerges as the overall winner in the key metric of LOC, having the smallest LOC in each category. Positioned in the middle field, Atomic CSS outperforms BEM, which holds the last position in this comparison. 
 
 \subsection{Maintenance}
 To assess the adaptability and ease of making styling changes within each methodology, a practical implementation of a theme toggle was employed. This implementation aimed to highlight the methodologies' efficiency in handling modifications. 
 
 \textbf{BEM}
 
-To assess the maintenance aspect in BEM, the implementation of a color theme toggle revealed challenges. The hierarchical naming conventions can complicate the identification and modification of relevant classes. This overnesting may hinder adaptability and require adjustments to maintain a cohesive structure. BEM's maintenance efforts may increase, especially when handling complex theming scenarios.
+The implementation of the color theme toggle revealed challenges im BEM. The hierarchical naming conventions can complicate the identification and modification of relevant classes. This overnesting may hinder adaptability and require adjustments to maintain a cohesive structure. BEM's maintenance efforts may increase, especially when handling complex theming scenarios.
 
 \textbf{SMACSS}
 
@@ -423,9 +419,9 @@ In evaluating the reusability aspects of CSS methodologies, we delve into how ea
 
 \textbf{BEM}
 
-By structuring code into Blocks, Elements, and Modifiers, BEM promotes modularity facilitating the reuse of predefined styles for specific components. Furthermore, he methodology's naming conventions enhance readability, aiding in the identification and reuse of styles.
+By structuring code into Blocks, Elements, and Modifiers, BEM promotes modularity facilitating the reuse of predefined styles for specific components. Furthermore, the methodology's naming conventions enhance readability, aiding in the identification and reuse of styles.
 
-However, the potential for excessive nesting may impede reusability, as deeply nested structures can restrict the adaptability of styles in diverse contexts. Considering  the code snippet in \ref{html-bem}, which shows a potential conflict. We have the classes for the \emph{todo-list}, for the \emph{todo-list-item} and for \emph{todo-list-item-label}. Because the todo-list-item is the block for the todo-list-item-label, it is written like \emph{todo-list-item\_\_label}. On the other hand, todo-list-item is an element of todo-list and could also be written like \emph{todo-list\_\_item}.
+However, the potential for excessive nesting may impede reusability, as deeply nested structures can restrict the adaptability of styles in diverse contexts. The code snippet in \ref{html-bem} shows a potential conflict. We have the classes for the \emph{todo-list}, for the \emph{todo-list-item} and for the \emph{todo-list-item-label}. Because the todo-list-item is the block for the todo-list-item-label, it is written like \emph{todo-list-item\_\_label}. On the other hand, todo-list-item is an element of todo-list and could also be written like \emph{todo-list\_\_item} and the class for the label would the be written like \emph{todo-list\_\_item\_\_label}.
 To address the challenge of overnesting and ensure a more harmonious structure, adjustments to the BEM methodology become imperative.
 
 \textbf{SMACSS}
@@ -443,35 +439,36 @@ A small disadvantage might be that the limited granularity  may lead to less fin
 
 
 \subsection{User-friendliness}
-User-friendliness in the context of CSS methodologies involves how intuitively developers can work with and understand the chosen approach. Let's evaluate the user-friendliness of each methodology:
+User-friendliness in the context of CSS methodologies involves how intuitively developers can work with and understand the chosen approach. 
 
 \textbf{BEM}
 
-The user-friendliness of BEM can vary. While its naming conventions provide clarity, beginners might find it challenging to decide when to create a new block or use an existing element. The longer class names might also impact readability.  
+The user-friendliness of BEM can vary. While its naming conventions provide clarity, beginners might find it challenging in nested structures to decide when to create a new block or add child-elements to existing blocks. The longer class names might also impact readability.  
 
 \textbf{SMACSS}
 
-Through aiming for simplicity, making it relatively user-friendly. The categorization into Base, Layout, Module, State, and Theme provides a clear structure. However, developers might need some time to adapt to this categorization approach.
+The categorization of SMACSS into Base, Layout, Module, State, and Theme provides a clear structure. This facilitates understanding of existing code. However, developers might need some time to adapt to this categorization approach.
 
 \textbf{Atomic CSS}
 
 Atomic CSS is known for its straightforward and minimalist approach, making it easy to apply styles by combining small, single-purpose classes. However, it may not be considered user-friendly in certain contexts. The challenge lies in the fact that the individual classes might not clearly convey the styles they imply, making it less intuitive for developers to understand the visual outcome.
-In more complex structures, the use of numerous atomic classes for a single element can become overwhelming and counterproductive. This may lead to the creation of larger utility classes, somewhat resembling traditional styles, to maintain manageability.
+In more complex structures, the use of numerous atomic classes for a single element can become overwhelming and counterproductive. This can
+lead to the creation of larger utility classes, which actually contradicts the principle of atomic CSS.
 
 
 \section{Conclusion}
-In a comprehensive analysis encompassing four key metrics—Lines of Code, Maintenance, Reusability, and User-friendliness—each CSS methodology, namely BEM, SMACSS, and Atomic CSS, reveals distinct characteristics and performance.
+In a comprehensive analysis encompassing the four key metrics—Lines of Code, Maintenance, Reusability, and User-friendliness—each CSS methodology, namely BEM, SMACSS, and Atomic CSS, reveals distinct characteristics and performance.
 
-The quantification of Lines of Code across various categories positions SMACSS as the frontrunner, boasting the smallest LOC in each aspect. This is a testament to SMACSS's efficiency in minimizing code volume while maintaining functionality. 
+The quantification of Lines of Code across various categories positions SMACSS as the frontrunner, having the smallest LOC in each aspect. This is a testament to SMACSS's efficiency in minimizing code volume while maintaining functionality. 
 
 Delving into the realm of maintenance, the theme toggle implementation unveils nuanced challenges within each methodology. BEM introduces complexity through its hierarchical naming conventions, potentially hindering adaptability, and necessitating adjustments for cohesive structures. SMACSS demonstrates efficiency by centralizing theming, simplifying modifications, yet the accuracy of categorization remains pivotal. Atomic CSS, driven by single-purpose utility classes, presents challenges in maintaining clarity and managing styles in complex scenarios.
 
 Considering reusability, BEM's structural approach, with Blocks, Elements, and Modifiers, facilitates modularity and style reuse. However, the potential for overnesting poses challenges in diverse contexts. SMACSS, by categorizing styles, fosters separation, enhancing reusability across components. 
 Atomic CSS stands out as the epitome of reusability, as it does not stick to individual components. Instead, it uses small, versatile classes that can be effortlessly applied across various elements without stringent ties to specific components.
 
-User-friendliness, a critical aspect in development workflows, is examined across BEM, SMACSS, and Atomic CSS. BEM, with its naming conventions, provides clarity but may pose challenges for beginners in deciding when to create new blocks or use existing elements. SMACSS, aiming for simplicity, offers a user-friendly structure, though adapting to its categorization approach may require an adjustment period. Atomic CSS, known for its minimalism, presents a straightforward but potentially less intuitive approach, especially in complex structures.
+Considering user-friendliness, BEM provides clarity but may pose challenges for beginners in deciding when it is an block and when an element. SMACSS, aiming for simplicity, offers a user-friendly structure, though adapting to its categorization approach may require an adjustment period. Atomic CSS, known for its minimalism, presents a straightforward but potentially less intuitive approach, especially in complex structures.
 
-In the grand scheme of things, SMACSS emerges as the overall winner. Its prowess in minimizing code, efficient maintenance, enhanced reusability, and user-friendly structure position it as a robust choice for CSS architecture. While BEM and Atomic CSS bring unique advantages, they exhibit comparatively weaker performances in this comprehensive evaluation. SMACSS, with its balanced approach, shines as the methodology that excels across the board, meeting the demands of diverse development scenarios.
+In the grand scheme of things, SMACSS emerges as the overall winner. Its prowess in minimizing code, efficient maintenance, enhanced reusability, and user-friendly structure position it as a robust choice for CSS architecture. While BEM and Atomic CSS bring unique advantages, they exhibit comparatively weaker performances in this comprehensive evaluation.
 
 
 
